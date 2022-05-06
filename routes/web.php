@@ -13,7 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
+/*
+Route::get('/hello', function () {
     return 'Hello World';
 });
+Route::get('/users/{id}/{name}', function($id, $name) {
+    return 'This is user '.$name.' with an id of '.$id;
+});
+
+/* Load profile view this way?
+Route::get('/users/{id}/profile', function($id) {
+    return 'This is user '.$name.' with an id of '.$id;
+});
+*/
+
+Route::get('/', 'App\Http\Controllers\PagesController@index');
+Route::get('/about', 'App\Http\Controllers\PagesController@about');
+Route::get('/services', 'App\Http\Controllers\PagesController@services');
+
